@@ -4,7 +4,7 @@ CFLAGS =
 INCLUDES = 
 CPPFLAGS = -I .
 LDFLAGS  = -L ./
-VPATH = 
+VPATH = ./ src include
 LIBS = -lfunny 
 
 OBJS = main.o
@@ -33,9 +33,6 @@ depend: main.c
 
 include depend
 
-
-
-libs: 
 
 help:
 	$(MAKE) --print-data-base --question \
