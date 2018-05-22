@@ -1,5 +1,3 @@
-
-
 CC = gcc
 AR = ar
 CFLAGS = 
@@ -19,7 +17,7 @@ ARFLAGS = r
 .PHONY: clean
 .PHONY: libs
 
-main:$(OBJS) -lfunny
+main:$(OBJS) libfunny.a
 	$(CC)  $^ -o $@ $(LIBS) $(LDFLAGS)
 
 %.o:%.c 
