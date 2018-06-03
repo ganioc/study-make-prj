@@ -25,6 +25,8 @@ include definitions.mk
 .PHONY: clean
 .PHONY: libs
 .PHONY: test
+.PHONY: test3
+
 
 # Macro
 define free-space
@@ -48,18 +50,9 @@ libfunny.a : funny.o
 	$(AR) $(ARFLAGS) $@ $<
 	ranlib $@
 
-<<<<<<< HEAD
-depend: main.c 
-	$(CC) -M $(CPPFLAGS) $^ > $@
-
-include depend
-
-
-=======
 libs: 
 	echo "Create libs"
->>>>>>> 3ca0bea019b2b091da66cfa3cc21d943a4669202
-help:
+help:                                                                                    
 	# $(MAKE) --print-data-base --question \
 	# $(AWK) '/^[^.%][-A-Za-z0-9_]*:/ \
 	# { print substr($$1, 1, length($$1) - 1) }'
@@ -82,3 +75,7 @@ clean:
 test:
 	@echo "hello, this is a test";
 	# @echo "xx";
+sources = a.h b.c c.c
+
+test3:$(sources)
+	grep --line-number '*.h' $^
